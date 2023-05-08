@@ -1,0 +1,10 @@
+---
+- hosts: dev
+  gather_facts: true
+  tasks:
+  - debug:
+     msg:
+      - "ansible_cmdline is of type {{ ansible_cmdline | type_debug }}"
+      - "ansible_architecture is of type {{ ansible_architecture | type_debug }}"
+      - "ansible_all_ipv6_addresses is of type {{ ansible_all_ipv6_addresses | type_debug }}"
+...

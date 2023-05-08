@@ -1,0 +1,12 @@
+---
+
+- name: Deploy custom httpd.conf using role
+  copy:
+   src: httpd.conf
+   dest: /etc/httpd/conf/httpd.conf
+  notify: restart-apache
+
+- name: Deploy custom index.html using role
+  copy:
+   src: index.html
+   dest: /var/www/html/

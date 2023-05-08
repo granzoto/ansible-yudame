@@ -1,0 +1,13 @@
+---
+
+- hosts: dev
+  become: true
+  tasks:
+  - name: Get Golang version
+    command: "/usr/local/go/bin/go version"
+    register: gover
+    changed_when: gover.rc != 0
+
+  - debug:
+     msg : "Golang version is {{ gover }}"
+...

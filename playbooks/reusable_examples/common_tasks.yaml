@@ -1,0 +1,13 @@
+---
+
+- name: backup /var/www/html
+  archive:
+   path: /var/www/html
+   dest: /home/cloud-user/backup-html.gz
+   format: gz
+
+- name: Deploy new html
+  copy:
+   src: ./templates/index-new-tasks.html.template
+   dest: /var/www/html/index.html
+...

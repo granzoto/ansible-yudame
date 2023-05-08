@@ -1,0 +1,10 @@
+---
+
+- hosts: dev
+  become: true
+  tasks:
+   - name: Deploy new html
+     copy:
+      src: ./templates/index-new.html.template
+      dest: /var/www/html/index.html
+...

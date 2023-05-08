@@ -1,0 +1,8 @@
+---
+
+- hosts: dev
+  become: yes
+
+- import_playbook: backup.yaml
+- import_playbook: deploy_changes.yaml
+...

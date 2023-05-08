@@ -1,0 +1,13 @@
+---
+
+- hosts: dev
+  become: true
+  vars_files:
+   - ../vars/vars.yaml
+  tasks:
+   - name: archive passwd file
+     archive:
+       path: "{{ source_dir }}"
+       dest: "{{ backup_dir }}/{{backup_file_name }}"
+       format: gz
+...

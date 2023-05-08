@@ -1,0 +1,11 @@
+---
+
+- hosts: all
+  tasks:
+   - name: Create a simplpe file using shell module
+     shell: touch mytestfile.txt
+     args:
+      chdir: /tmp
+      creates: /tmp/mytestfile.txt
+
+...

@@ -1,0 +1,9 @@
+---
+- hosts: dev
+  become: true
+  tasks:
+   - name: Install Apache on remote
+     yum:
+      name: httpd
+      state: latest
+...

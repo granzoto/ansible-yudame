@@ -1,0 +1,18 @@
+---
+
+- hosts: dev
+  become: true
+  tasks:
+   - name: Deploy custom ssh_config file on remote
+     template:
+      src: templates/ssh_config.template
+      dest: /etc/ssh/ssh_config
+     notify:
+      - restart ssh
+
+  handlers:
+   - name: restart ssh
+     service:
+      name: sshd
+      state: restarted
+...
